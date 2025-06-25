@@ -1,4 +1,5 @@
 # وبلاگ شخصی با Django
+![Screenshot_2025-06-25_21-49-13](https://github.com/user-attachments/assets/ec3470d1-8f73-40bc-a7b1-9693168f574c)
 
 یک وبلاگ شخصی کامل با Django که شامل تمام قابلیت‌های مدرن یک وبلاگ است.
 
@@ -27,9 +28,3 @@
 - **Icons:** Font Awesome 6
 - **Font:** Vazirmatn
 
-## نصب و راه‌اندازی
-
-### 1. کلون کردن پروژه
-```bash
-git clone https://github.com/mmnosrati/personal-blog-django.git
-cd personal-blog-django
