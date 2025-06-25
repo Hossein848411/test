@@ -1,0 +1,10 @@
+<ul class="list-unstyled">
+    {% for category in categories %}
+        <li class="mb-2">
+            <a href="{{ category.get_absolute_url }}" class="text-decoration-none">
+                {{ category.name }}
+                <span class="badge bg-secondary">{{ category.post_count }}</span>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

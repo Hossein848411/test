@@ -1,0 +1,551 @@
+{% extends 'base.html' %}
+
+{% block title %}تماس با من - وبلاگ شخصی{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Header Section -->
+    <div class="col-12 text-center mb-5">
+        <h1 class="display-4 mb-3">
+            <i class="fas fa-envelope me-3" style="color: var(--accent-primary);"></i>
+            تماس با من
+        </h1>
+        <p class="lead" style="color: var(--text-secondary);">
+            خوشحال می‌شوم از شما بشنوم و در ارتباط باشیم
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Contact Form -->
+    <div class="col-lg-8 mb-4">
+        <div class="card">
+            <div class="card-body p-4">
+                <h4 class="mb-4">
+                    <i class="fas fa-paper-plane me-2" style="color: var(--accent-primary);"></i>
+                    پیام بفرستید
+                </h4>
+                
+                <form id="contact-form">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="name" class="form-label" style="color: var(--text-primary); font-weight: 500;">
+                                <i class="fas fa-user me-1"></i>نام و نام خانوادگی
+                            </label>
+                            <input type="text" class="form-control" id="name" name="name" required 
+                                   placeholder="نام کامل خود را وارد کنید">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label" style="color: var(--text-primary); font-weight: 500;">
+                                <i class="fas fa-envelope me-1"></i>ایمیل
+                            </label>
+                            <input type="email" class="form-control" id="email" name="email" required 
+                                   placeholder="ایمیل خود را وارد کنید">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="subject" class="form-label" style="color: var(--text-primary); font-weight: 500;">
+                            <i class="fas fa-tag me-1"></i>موضوع
+                        </label>
+                        <select class="form-control" id="subject" name="subject" required>
+                            <option value="">موضوع پیام را انتخاب کنید</option>
+                            <option value="collaboration">همکاری</option>
+                            <option value="question">سوال فنی</option>
+                            <option value="feedback">بازخورد</option>
+                            <option value="business">پیشنهاد کاری</option>
+                            <option value="other">سایر</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="message" class="form-label" style="color: var(--text-primary); font-weight: 500;">
+                            <i class="fas fa-comment me-1"></i>پیام
+                        </label>
+                        <textarea class="form-control" id="message" name="message" rows="6" required 
+                                  placeholder="پیام خود را اینجا بنویسید..."></textarea>
+                        <small style="color: var(--text-muted);">حداقل ۱۰ کاراکتر وارد کنید</small>
+                    </div>
+                    
+                    <!-- Privacy Notice -->
+                    <div class="mb-4 p-3 rounded" style="background: var(--bg-tertiary); border: 1px solid var(--border-primary);">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="privacy" name="privacy" required>
+                            <label class="form-check-label" for="privacy" style="color: var(--text-secondary);">
+                                <i class="fas fa-shield-alt me-1" style="color: var(--accent-success);"></i>
+                                با ارسال این فرم، موافقت می‌کنم که اطلاعات من صرفاً برای پاسخ به پیامم استفاده شود
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-paper-plane me-2"></i>
+                        ارسال پیام
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="card mt-4">
+            <div class="card-body p-4">
+                <h4 class="mb-4">
+                    <i class="fas fa-question-circle me-2" style="color: var(--accent-warning);"></i>
+                    سوالات متداول
+                </h4>
+                
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item mb-2" style="background: var(--bg-tertiary); border: 1px solid var(--border-primary);">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#faq1" style="background: var(--bg-tertiary); color: var(--text-primary); border: none;">
+                                <i class="fas fa-clock me-2" style="color: var(--accent-primary);"></i>
+                                چه مدت طول می‌کشد تا پاسخ دریافت کنم؟
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color: var(--text-secondary);">
+                                معمولاً ظرف ۲۴ تا ۴۸ ساعت به پیام‌های شما پاسخ می‌دهم. در روزهای تعطیل ممکن است کمی بیشتر طول بکشد.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item mb-2" style="background: var(--bg-tertiary); border: 1px solid var(--border-primary);">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#faq2" style="background: var(--bg-tertiary); color: var(--text-primary); border: none;">
+                                <i class="fas fa-handshake me-2" style="color: var(--accent-success);"></i>
+                                آیا پروژه‌های فریلنسری می‌پذیرید؟
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color: var(--text-secondary);">
+                                بله، بسته به زمان و نوع پروژه، پروژه‌های فریلنسری را می‌پذیرم. لطفاً جزئیات پروژه خود را ارسال کنید.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item" style="background: var(--bg-tertiary); border: 1px solid var(--border-primary);">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#faq3" style="background: var(--bg-tertiary); color: var(--text-primary); border: none;">
+                                <i class="fas fa-graduation-cap me-2" style="color: var(--accent-warning);"></i>
+                                آیا مشاوره فنی ارائه می‌دهید؟
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body" style="color: var(--text-secondary);">
+                                بله، در زمینه‌های تخصصی خود مشاوره ارائه می‌دهم. برای کسب اطلاعات بیشتر با من تماس بگیرید.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Contact Info Sidebar -->
+    <div class="col-lg-4">
+        <!-- Contact Information -->
+        <div class="card mb-4">
+            <div class="card-body p-4">
+                <h4 class="mb-4">
+                    <i class="fas fa-address-card me-2" style="color: var(--accent-primary);"></i>
+                    اطلاعات تماس
+                </h4>
+                
+                <div class="contact-item mb-4">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 me-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); color: white;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1" style="color: var(--text-primary);">ایمیل</h6>
+                            <a href="mailto:your-email@example.com" style="color: var(--accent-primary); text-decoration: none;">
+                                your-email@example.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-item mb-4">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 me-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent-success), #2ea043); color: white;">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1" style="color: var(--text-primary);">تلفن</h6>
+                            <a href="tel:+989123456789" style="color: var(--accent-success); text-decoration: none;">
+                                +۹۸ ۹۱۲ ۳۴۵ ۶۷۸۹
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-item mb-4">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 me-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent-warning), #b08800); color: white;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1" style="color: var(--text-primary);">آدرس</h6>
+                            <p class="mb-0" style="color: var(--text-secondary);">تهران، ایران</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 me-3">
+                            <div class="rounded-circle d-flex align-items-center justify-content-center" 
+                                 style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--accent-danger), #c93c37); color: white;">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1">
+                            <h6 class="mb-1" style="color: var(--text-primary);">ساعات کاری</h6>
+                            <p class="mb-0" style="color: var(--text-secondary);">
+                                شنبه تا چهارشنبه<br>
+                                ۹:۰۰ - ۱۸:۰۰
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Social Media -->
+        <div class="card mb-4">
+            <div class="card-body p-4">
+                <h4 class="mb-4">
+                    <i class="fas fa-share-alt me-2" style="color: var(--accent-primary);"></i>
+                    شبکه‌های اجتماعی
+                </h4>
+                
+                <div class="d-grid gap-2">
+                    <a href="#" class="btn btn-outline-primary d-flex align-items-center justify-content-start">
+                        <i class="fab fa-linkedin fa-lg me-3" style="color: #0077b5;"></i>
+                        <div class="text-start">
+                            <div style="color: var(--text-primary); font-weight: 500;">LinkedIn</div>
+                            <small style="color: var(--text-muted);">پروفایل حرفه‌ای</small>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="btn btn-outline-primary d-flex align-items-center justify-content-start">
+                        <i class="fab fa-github fa-lg me-3" style="color: var(--text-primary);"></i>
+                        <div class="text-start">
+                            <div style="color: var(--text-primary); font-weight: 500;">GitHub</div>
+                            <small style="color: var(--text-muted);">پروژه‌های متن‌باز</small>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="btn btn-outline-primary d-flex align-items-center justify-content-start">
+                        <i class="fab fa-twitter fa-lg me-3" style="color: #1da1f2;"></i>
+                        <div class="text-start">
+                            <div style="color: var(--text-primary); font-weight: 500;">Twitter</div>
+                            <small style="color: var(--text-muted);">آخرین اخبار و نظرات</small>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="btn btn-outline-primary d-flex align-items-center justify-content-start">
+                        <i class="fab fa-instagram fa-lg me-3" style="color: #e4405f;"></i>
+                        <div class="text-start">
+                            <div style="color: var(--text-primary); font-weight: 500;">Instagram</div>
+                            <small style="color: var(--text-muted);">تصاویر و استوری‌ها</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Quick Tips -->
+        <div class="card">
+            <div class="card-body p-4">
+                <h4 class="mb-4">
+                    <i class="fas fa-lightbulb me-2" style="color: var(--accent-warning);"></i>
+                    نکات مهم
+                </h4>
+                
+                <div class="alert alert-info" style="background: rgba(88, 166, 255, 0.1); border: 1px solid rgba(88, 166, 255, 0.3); border-radius: 10px;">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <strong>پاسخ سریع:</strong> برای دریافت پاسخ سریع‌تر، لطفاً موضوع پیام خود را به وضوح مشخص کنید.
+                </div>
+                
+                <div class="alert alert-success" style="background: rgba(63, 185, 80, 0.1); border: 1px solid rgba(63, 185, 80, 0.3); border-radius: 10px;">
+                    <i class="fas fa-shield-alt me-2"></i>
+                    <strong>حریم خصوصی:</strong> اطلاعات شما محفوظ است و صرفاً برای پاسخ‌گویی استفاده می‌شود.
+                </div>
+                
+                <div class="alert alert-warning" style="background: rgba(210, 153, 34, 0.1); border: 1px solid rgba(210, 153, 34, 0.3); border-radius: 10px;">
+                    <i class="fas fa-clock me-2"></i>
+                    <strong>زمان پاسخ:</strong> معمولاً ظرف ۲۴-۴۸ ساعت پاسخ می‌دهم.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background: var(--bg-card); border: 1px solid var(--border-primary);">
+            <div class="modal-header" style="border-bottom: 1px solid var(--border-primary);">
+                <h5 class="modal-title" id="successModalLabel" style="color: var(--text-primary);">
+                    <i class="fas fa-check-circle me-2" style="color: var(--accent-success);"></i>
+                    پیام با موفقیت ارسال شد
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن" 
+                        style="filter: invert(1);"></button>
+            </div>
+            <div class="modal-body" style="color: var(--text-secondary);">
+                <p class="mb-3">
+                    <i class="fas fa-paper-plane me-2" style="color: var(--accent-primary);"></i>
+                    پیام شما با موفقیت ارسال شد. به زودی با شما تماس خواهم گرفت.
+                </p>
+                <p class="mb-0">
+                    <i class="fas fa-heart me-2" style="color: var(--accent-danger);"></i>
+                    از اینکه وقت گذاشتید و با من در تماس هستید، متشکرم!
+                </p>
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid var(--border-primary);">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">
+                    <i class="fas fa-thumbs-up me-2"></i>
+                    باشه، متوجه شدم
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+    
+    // Form validation and submission
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const name = formData.get('name').trim();
+        const email = formData.get('email').trim();
+        const subject = formData.get('subject');
+        const message = formData.get('message').trim();
+        const privacy = formData.get('privacy');
+        
+        // Validation
+        let isValid = true;
+        let errorMessage = '';
+        
+        if (name.length < 2) {
+            isValid = false;
+            errorMessage = 'نام باید حداقل ۲ کاراکتر باشد.';
+        }
+        
+        if (!email.includes('@') || !email.includes('.')) {
+            isValid = false;
+            errorMessage = 'لطفاً ایمیل معتبر وارد کنید.';
+        }
+        
+        if (!subject) {
+            isValid = false;
+            errorMessage = 'لطفاً موضوع پیام را انتخاب کنید.';
+        }
+        
+        if (message.length < 10) {
+            isValid = false;
+            errorMessage = 'پیام باید حداقل ۱۰ کاراکتر باشد.';
+        }
+        
+        if (!privacy) {
+            isValid = false;
+            errorMessage = 'لطفاً شرایط حریم خصوصی را تایید کنید.';
+        }
+        
+        if (!isValid) {
+            // Show error
+            showAlert('error', errorMessage);
+            return;
+        }
+        
+        // Show loading state
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>در حال ارسال...';
+        submitBtn.disabled = true;
+        
+        // Simulate form submission (replace with actual AJAX call)
+        setTimeout(() => {
+            // Reset form
+            contactForm.reset();
+            
+            // Reset button
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            
+            // Show success modal
+            successModal.show();
+            
+            // Show success message
+            showAlert('success', 'پیام شما با موفقیت ارسال شد!');
+        }, 2000);
+    });
+    
+    // Alert function
+    function showAlert(type, message) {
+        const alertDiv = document.createElement('div');
+        alertDiv.className = `alert alert-${type} alert-dismissible fade show`;
+        alertDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            min-width: 300px;
+            border-radius: 10px;
+        `;
+        
+        const icon = type === 'success' ? 'check-circle' : 'exclamation-circle';
+        alertDiv.innerHTML = `
+            <i class="fas fa-${icon} me-2"></i>
+            ${message}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" style="filter: invert(1);"></button>
+        `;
+        
+        document.body.appendChild(alertDiv);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (alertDiv.parentNode) {
+                alertDiv.remove();
+            }
+        }, 5000);
+    }
+    
+    // Real-time validation
+    const inputs = contactForm.querySelectorAll('input, textarea, select');
+    inputs.forEach(input => {
+        input.addEventListener('blur', function() {
+            validateField(this);
+        });
+        
+        input.addEventListener('input', function() {
+            // Remove error styling on input
+            this.classList.remove('is-invalid');
+            const feedback = this.parentNode.querySelector('.invalid-feedback');
+            if (feedback) {
+                feedback.remove();
+            }
+        });
+    });
+    
+    function validateField(field) {
+        let isValid = true;
+        let message = '';
+        
+        // Remove existing feedback
+        field.classList.remove('is-invalid');
+        const existingFeedback = field.parentNode.querySelector('.invalid-feedback');
+        if (existingFeedback) {
+            existingFeedback.remove();
+        }
+        
+        // Validate based on field type
+        switch(field.name) {
+            case 'name':
+                if (field.value.trim().length < 2) {
+                    isValid = false;
+                    message = 'نام باید حداقل ۲ کاراکتر باشد';
+                }
+                break;
+            case 'email':
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(field.value)) {
+                    isValid = false;
+                    message = 'لطفاً ایمیل معتبر وارد کنید';
+                }
+                break;
+            case 'message':
+                if (field.value.trim().length < 10) {
+                    isValid = false;
+                    message = 'پیام باید حداقل ۱۰ کاراکتر باشد';
+                }
+                break;
+        }
+        
+        if (!isValid) {
+            field.classList.add('is-invalid');
+            const feedback = document.createElement('div');
+            feedback.className = 'invalid-feedback';
+            feedback.textContent = message;
+            field.parentNode.appendChild(feedback);
+        }
+        
+        return isValid;
+    }
+    
+    // Character counter for message field
+    const messageField = document.getElementById('message');
+    const messageLabel = document.querySelector('label[for="message"]');
+    
+    messageField.addEventListener('input', function() {
+        const count = this.value.length;
+        const counter = messageLabel.querySelector('.char-counter') || document.createElement('span');
+        counter.className = 'char-counter ms-2';
+        counter.style.color = count < 10 ? 'var(--accent-danger)' : 'var(--text-muted)';
+        counter.textContent = `(${count} کاراکتر)`;
+        
+        if (!messageLabel.querySelector('.char-counter')) {
+            messageLabel.appendChild(counter);
+        }
+    });
+});
+</script>
+
+<style>
+.is-invalid {
+    border-color: var(--accent-danger) !important;
+    box-shadow: 0 0 0 0.2rem rgba(248, 81, 73, 0.25) !important;
+}
+
+.invalid-feedback {
+    color: var(--accent-danger);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--bg-hover) !important;
+    color: var(--accent-primary) !important;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(88, 166, 255, 0.25);
+}
+
+.contact-item:hover .rounded-circle {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .alert {
+        right: 10px !important;
+        left: 10px !important;
+        min-width: auto !important;
+    }
+}
+</style>
+{% endblock %}
+
