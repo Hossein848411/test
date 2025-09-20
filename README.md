@@ -4,6 +4,17 @@
 یک وبلاگ شخصی کامل با Django که شامل تمام قابلیت‌های مدرن یک وبلاگ است.
 
 ## ویژگی‌ها
+asgiref==3.9.1
+Django==5.2.6
+django-ckeditor==6.7.3
+django-js-asset==3.1.2
+django-mathfilters==1.0.0
+django-taggit==6.1.0
+pillow==11.3.0
+setuptools==80.9.0
+sqlparse==0.5.3
+tzdata==2025.2
+wheel==0.45.1
 
 - ✅ **تم دارک مدرن** با فونت وزیر
 - ✅ **مدیریت کامل پست‌ها** (CRUD)
